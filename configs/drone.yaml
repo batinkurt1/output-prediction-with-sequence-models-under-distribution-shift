@@ -1,0 +1,56 @@
+system: drone
+
+dt: 0.1
+n_steps: 100
+
+initial_state_mean: [0, 0, 0, 0, 0, 0]
+initial_state_cov: [[0.1, 0, 0, 0, 0, 0],
+                    [0, 0.1, 0, 0, 0, 0],
+                    [0, 0, 0.1, 0, 0, 0],
+                    [0, 0, 0, 0.1, 0, 0],
+                    [0, 0, 0, 0, 0.1, 0],
+                    [0, 0, 0, 0, 0, 0.1]]
+
+
+process_noise_mean: [0, 0, 0, 0, 0, 0]
+process_noise_cov: [[0.01, 0, 0, 0, 0, 0],
+                    [0, 0.01, 0, 0, 0, 0],
+                    [0, 0, 0.01, 0, 0, 0],
+                    [0, 0, 0, 0.01, 0, 0],
+                    [0, 0, 0, 0, 0.01, 0],
+                    [0, 0, 0, 0, 0, 0.01]]
+
+measurement_noise_mean: [0, 0, 0]
+measurement_noise_cov: [[0.1, 0, 0],
+                         [0, 0.1, 0],
+                         [0, 0, 0.1]]
+
+clip_state: true
+input_enabled: true # always true for drone
+
+xmin: -5 # valid only at initialization
+xmax: 5  # valid only at initialization
+zmin: -5 # valid only at initialization
+zmax: 5  # valid only at initialization
+
+vxmin: -2
+vxmax: 2
+vzmin: -1
+vzmax: 1
+phimin: -1.0471975512   # -pi/3
+phimax:  1.0471975512   #  pi/3
+phidotmin: -0.7853981634  # -pi/4
+phidotmax:  0.7853981634  #  pi/4
+
+umin: 2.0
+umax: 3.0
+
+g: 9.81
+
+m: 0.486   # kg
+l: 0.25    # m
+J: 0.00383 # kg m^2
+
+C: [[1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0]]
