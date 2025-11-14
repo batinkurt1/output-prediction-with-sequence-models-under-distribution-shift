@@ -1,0 +1,15 @@
+system: "lti"
+
+# Monte Carlo
+n_traj: 1000
+
+H: 1
+
+L: null   # or: null
+
+model_run_dirs:
+  - "../outputs/lti/gpt2-no_input-H5-L10-lr0.0003-ep50/"   
+  - "../outputs/lti/ssm-no_input-H5-L10-lr0.0003-ep50/"    
+
+# Where to save results
+save_dir: "../test"

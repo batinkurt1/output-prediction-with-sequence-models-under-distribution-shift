@@ -1,0 +1,3 @@
+system: both
+n_traj: 10000
+outputs_dir: ../data

@@ -1,0 +1,31 @@
+data_path: ../data/drone/N10000-S100-input-fixed_matrices/drone_dataset.pkl #../data/lti/N10000-S100-no_input-random_matrices/lti_dataset.pkl
+
+H: 1
+L: null # null for full context
+train_ratio: 0.9
+seed: 42
+
+batch_size: 64
+epochs: 5
+lr: 0.0003
+weight_decay: 0.01
+grad_clip: 1.0
+num_workers: 8
+outputs_dir: ../outputs
+loss_reduction: mean
+
+d_model: 256
+dropout: 0.1
+
+n_layer: 6
+n_head: 8
+max_len: 2048
+
+n_x: 16
+s_A: -0.1
+use_delta: true
+fix_sA: false
+
+models: [gpt2, ssm]
+
+normalize: false
